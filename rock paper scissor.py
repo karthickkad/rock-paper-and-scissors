@@ -1,30 +1,30 @@
 import random
-
+#Initialize of you_score and computer_score.
 you_score = 0
 computer_score = 0
 
-def get_user_choice():
+def get_user_choice(): #function to get userchoice.
     """
     Function to get user's choice (rock, paper, or scissors)
     """
-    while True:
+    while True: #continue loop until the game ends
         user_choice = input("Enter your choice (rock, paper, or scissors): ").strip().lower()
         if user_choice in ['rock', 'paper', 'scissors']:
             return user_choice
         else:
             print("Invalid choice! Please enter 'rock', 'paper', or 'scissors'.")
 
-def get_computer_choice():
+def get_computer_choice():#computers_choice
     """
     Function to randomly generate computer's choice
     """
-    return random.choice(['rock', 'paper', 'scissors'])
+    return random.choice(['rock', 'paper', 'scissors']) #random generator of words
 
-def determine_winner(user_choice, computer_choice):
+def determine_winner(user_choice, computer_choice): #comparing user_choice and computer_choice to determine the winner 
     """
     Function to determine the winner of the game
     """
-    global you_score, computer_score;
+    global you_score, computer_score; #global declaration 
 #determine winner in each round
     if user_choice == computer_choice:
         return "It's a tie!"
@@ -45,8 +45,8 @@ Function to play the game
 print("Let's play Rock, Paper, Scissors!")
 print("\n")
 n = int(input("How many rounds do you want to play? "))
-count = 1
-
+count = 1 
+#loop for no.of.rounds played based on user input
 while n > 0:
     print(f"Round: {count}")
     user_choice = get_user_choice()
