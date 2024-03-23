@@ -25,7 +25,7 @@ def determine_winner(user_choice, computer_choice):
     Function to determine the winner of the game
     """
     global you_score, computer_score;
-
+#determine winner in each round
     if user_choice == computer_choice:
         return "It's a tie!"
     elif (user_choice == 'rock' and computer_choice == 'scissors') or \
@@ -47,7 +47,6 @@ print("\n")
 n = int(input("How many rounds do you want to play? "))
 count = 1
 
-# Solution as follows
 while n > 0:
     print(f"Round: {count}")
     user_choice = get_user_choice()
@@ -57,7 +56,7 @@ while n > 0:
     print(determine_winner(user_choice, computer_choice))
     count = count + 1
     n = n - 1
-
+#determine overall winner.
 if you_score > computer_score:
     print("You won the overall match")
 elif you_score < computer_score:
